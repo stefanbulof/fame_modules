@@ -1,12 +1,12 @@
 FROM perl:5
 
-ENV EXIFTOOL_VERSION=11.24
+ENV EXIFTOOL_VERSION=12.30
 
 # Install uesefull packages
 RUN cpan Archive::Zip
 
 # Download and install exiftool
-RUN wget http://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-${EXIFTOOL_VERSION}.tar.gz \
+RUN wget https://exiftool.org/Image-ExifTool-${EXIFTOOL_VERSION}.tar.gz \
 && tar -zxvf Image-ExifTool-${EXIFTOOL_VERSION}.tar.gz \
 && cd Image-ExifTool-${EXIFTOOL_VERSION} \
 && perl Makefile.PL \
